@@ -487,8 +487,8 @@ async def startup_event():
     global service
     
     # Get configuration from environment variables
-    model_path = os.getenv("MODEL_PATH", "models/improved_lstm_model_20251105_121505.pth")
-    vocab_path = os.getenv("VOCAB_PATH", "models/improved_lstm_model_20251105_121505_vocabulary.pth")
+    model_path = os.getenv("MODEL_PATH", "models/improved_lstm_model_20251106_003134.pth")
+    vocab_path = os.getenv("VOCAB_PATH", "models/improved_lstm_model_20251106_003134_vocabulary.pth")
     device = os.getenv("DEVICE", None)
     cache_size = int(os.getenv("CACHE_SIZE", "1000"))
     cache_ttl = int(os.getenv("CACHE_TTL", "3600"))
