@@ -94,11 +94,11 @@ def validate_model_files(config: Dict[str, Any]) -> bool:
 def create_uvicorn_config(config: Dict[str, Any]) -> Dict[str, Any]:
     """Create uvicorn configuration from config file."""
     server_config = config.get('server', {})
-    
+
     uvicorn_config = {
         'app': 'src.api.inference_api:app',
         'host': server_config.get('host', '0.0.0.0'),
-        'port': server_config.get('port', 8000),
+        'port': int(os.getenv("PORT", 8080)),  # <-- FIXED
         'workers': server_config.get('workers', 1),
         'reload': server_config.get('reload', False),
         'log_level': server_config.get('log_level', 'info'),
@@ -106,6 +106,8 @@ def create_uvicorn_config(config: Dict[str, Any]) -> Dict[str, Any]:
     }
     
     return uvicorn_config
+
+
 
 
 def print_startup_info(config: Dict[str, Any]):

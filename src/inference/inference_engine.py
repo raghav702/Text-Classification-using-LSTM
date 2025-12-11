@@ -71,8 +71,14 @@ class InferenceEngine:
             self.logger.info(f"Loading model from {model_path}")
             self.logger.info(f"Loading vocabulary from {vocab_path}")
             
-            # Load model checkpoint
-            checkpoint = torch.load(model_path, map_location=self.device)
+            # Determine actual device for loading
+            load_device = 'cpu' if self.device == 'auto' else self.device
+            if self.device == 'auto':
+                load_device = 'cuda' if torch.cuda.is_available() else 'cpu'
+                self.device = load_device
+            
+            # Load model checkpoint with weights_only=False to handle legacy models
+            checkpoint = torch.load(model_path, map_location=load_device, weights_only=False)
             
             # Extract model configuration
             if 'model_config' in checkpoint:

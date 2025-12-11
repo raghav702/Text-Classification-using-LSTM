@@ -43,4 +43,4 @@ passlib[bcrypt]>=1.7.4
 slowapi>=0.1.9
 
 # CORS and security headers
-python-cors>=1.7.0
+starlette>=0.27.0   # <-- replaces python-cors

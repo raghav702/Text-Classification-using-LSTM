@@ -11,8 +11,8 @@ server:
 
 # Model Configuration
 model:
-  model_path: "models/improved_lstm_model_20251105_121505.pth"
-  vocab_path: "models/improved_lstm_model_20251105_121505_vocabulary.pth"
+  model_path: "models/improved_lstm_model_20251106_003134.pth"
+  vocab_path: "models/improved_lstm_model_20251106_003134_vocabulary.pth"
   device: "auto"  # auto, cpu, cuda
 
 # Cache Configuration

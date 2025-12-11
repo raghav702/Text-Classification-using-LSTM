@@ -633,10 +633,12 @@ async def general_exception_handler(request: Request, exc: Exception):
 
 if __name__ == "__main__":
     # Run the API server
+    import os
+    port = int(os.environ.get("PORT", 8080))
     uvicorn.run(
         "inference_api:app",
         host="0.0.0.0",
-        port=8000,
+        port=port,
         reload=False,
         log_level="info"
     )

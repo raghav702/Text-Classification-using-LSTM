@@ -41,6 +41,10 @@ ENV/
 env.bak/
 venv.bak/
 
+# Cleanup scripts
+cleanup.ps1
+cleanup_simple.ps1
+
 # IDE
 .vscode/
 .idea/

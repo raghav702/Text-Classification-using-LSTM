@@ -266,7 +266,7 @@ class TextPreprocessor:
         Args:
             filepath: Path to load vocabulary from
         """
-        vocab_data = torch.load(filepath)
+        vocab_data = torch.load(filepath, weights_only=False)
         
         self.word_to_idx = vocab_data['word_to_idx']
         self.idx_to_word = vocab_data['idx_to_word']

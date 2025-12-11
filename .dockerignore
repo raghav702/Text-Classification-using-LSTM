@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Data files
+data/imdb/aclImdb/
+data/imdb/train/
+data/imdb/test/
+
+# Logs and temporary files
+logs/
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Training artifacts (keep only best model)
+checkpoints/
+evaluation_results/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+!README.md
+
+# Testing
+tests/
+test_*.py
+*_test.py
