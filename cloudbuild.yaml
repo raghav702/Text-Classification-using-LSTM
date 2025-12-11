@@ -30,15 +30,15 @@ steps:
       - 'managed'
       - '--allow-unauthenticated'
       - '--memory'
-      - '1Gi'
+      - '2Gi'
       - '--cpu'
-      - '0.5'
+      - '1'
       - '--max-instances'
       - '1'
       - '--min-instances'
       - '0'
       - '--timeout'
-      - '300'
+      - '600'
 
 images:
   - 'gcr.io/$PROJECT_ID/lstm-sentiment-api:latest'
